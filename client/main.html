@@ -1,0 +1,24 @@
+<head>
+  <title>QuickTodos</title>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+  <header>
+    <h1>{{title}}</h1>
+  </header>
+  <ul>  
+    {{#each todos}}
+      {{>todo}}
+      {{/each}}
+  </ul>
+  
+</template>
+
+<template name="todo">
+  <li> {{text}} </li>
+</template>
+
