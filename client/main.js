@@ -38,6 +38,10 @@ Template.todo.events({
     Todos.update(this._id, {
         $set:{checked:!this.checked}
     });
+  },
+
+  'click .delete'(event) {
+    Todos.remove(this._id);
   }
 });
 
