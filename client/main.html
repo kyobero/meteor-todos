@@ -11,11 +11,13 @@
     {{> loginButtons}}
     <hr>
     <h1>{{title}}</h1>
+    {{#if currentUser}}
       <form class ="add-todo">
         <input type="text" name="text" placeholder="Add Todo.......">
         <input type="text" name="time" placeholder="Add Time.......">
         <button type="submit">Add</button>
       </form>
+      {{/if}}
   </header>
   <ul>  
     {{#each todos}}
