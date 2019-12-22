@@ -42,7 +42,8 @@ Template.todo.events({
   },
 
   'click .delete'(event) {
-    Todos.remove(this._id);
+    Meteor.call ('todos.remove', this._id)
+    // Todos.remove(this._id);
   }
 });
 

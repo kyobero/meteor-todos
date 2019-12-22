@@ -15,5 +15,8 @@ Meteor.methods({
   },
   'todos.setChecked'(id, setChecked){
     Todos.update(id, {$set:{checked: setChecked}});
+  },
+  'todos.remove' (id) {
+    Todos.remove(id);
   }
 });
