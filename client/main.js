@@ -31,7 +31,9 @@ Template.main.events({
     
     Todos.insert({
       text,
-      time
+      time, 
+      owner: Meteor.userId(),
+      username: Meteor.user().username
     });
 
     event.target.text.value = '';
