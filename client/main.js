@@ -1,4 +1,10 @@
 import { Template } from 'meteor/templating';
+import {Accounts} from 'meteor/accounts-base';
+
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY'
+})
+
 
 // const todos = [
 //   {text:'Pickup the kids from school'},
