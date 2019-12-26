@@ -29,6 +29,7 @@ Meteor.methods({
     if(todo.owner !== this.userId){
       throw new Meteor.Error('Unauthorized');
     } 
+    
     Todos.remove(id);
   },
 

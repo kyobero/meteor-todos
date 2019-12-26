@@ -3,7 +3,9 @@
 </head>
 
 <body>
+  <div class="container">
   {{> main}}
+  </div>
 </body>
 
 <template name="main">
@@ -12,14 +14,15 @@
     <hr>
     <h1>{{title}}</h1>
     {{#if currentUser}}
-      <form class ="add-todo">
-        <input type="text" name="text" placeholder="Add Todo.......">
-        <input type="text" name="time" placeholder="Add Time.......">
-        <button type="submit">Add</button>
+      <form class ="form-inline add-todo">
+        <input type="form-control" name="text" placeholder="Add Todo.......">
+        <input type="form-control" name="time" placeholder="Add Time.......">
+        <button class="btn btn-primary" type="submit">Add</button>
       </form>
+      <br>
       {{/if}}
   </header>
-  <ul>  
+  <ul class="list-group">  
     {{#each todos}}
       {{>todo}}
       {{/each}}
@@ -28,13 +31,13 @@
 </template>
 
 <template name="todo">
-  <li class="{{#if checked}}checked{{/if}}">
+  <li class="list-group-item {{#if checked}}checked{{/if}}">
     {{#if isOwner}}
-    <button class="delete">&times;</button>
+    <button class="btn btn-danger delete">&times;</button>
     {{/if}}
     <input type="checkbox" checked={{checked}} class="toggle-checked">
     {{#if isOwner}}
-      <button class="toggle-private">
+      <button class="btn btn-warning toggle-private">
         {{#if private}}
           Private
         {{else}}
