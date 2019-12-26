@@ -26,6 +26,9 @@ Meteor.methods({
     Todos.update(id, {$set:{checked: setChecked}});
   },
   'todos.remove' (id) {
+    if(todo.owner !== this.userId){
+      throw new Meteor.Error('Unauthorized');
+    } 
     Todos.remove(id);
   },
 
