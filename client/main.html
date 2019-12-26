@@ -29,9 +29,35 @@
 
 <template name="todo">
   <li class="{{#if checked}}checked{{/if}}">
+    {{#if isOwner}}
     <button class="delete">&times;</button>
+    {{/if}}
     <input type="checkbox" checked={{checked}} class="toggle-checked">
+    {{#if isOwner}}
+      <button class="toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+    {{/if}}
     <strong>{{username}}:</strong> {{text}} <span>[{{time}}]</span>
   </li>
+
+<!-- <template name="todo">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked={{checked}} class="toggle-checked">
+    {{#if is Owner}}
+    <button class ="toggle-private">
+      {{#if private}}
+      private
+      {{else}}
+      public
+      {{/if}}
+    </button>
+    <strong>{{username}}:</strong> {{text}} <span>[{{time}}]</span>
+  </li> -->
 </template>
 

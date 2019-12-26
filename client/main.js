@@ -47,6 +47,14 @@ Template.todo.events({
   'click .delete'(event) {
     Meteor.call ('todos.remove', this._id)
     // Todos.remove(this._id);
+  },
+  'click .toggle-private'(){
+    Meteor.call('todos.setPrivate', this._id, !this.private);
   }
 });
 
+Template.todo.helpers({
+  isOwner(){
+    return this.owner === Meteor.userId();
+  }
+});
