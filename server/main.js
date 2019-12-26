@@ -1,5 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 
+Meteor.publish('todos', function todoPublication(){
+  return Todos.find();
+});
+
 Meteor.methods({
   'todos.insert' (text, time){
     if (!this.userId){

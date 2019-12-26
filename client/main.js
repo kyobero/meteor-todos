@@ -5,6 +5,9 @@ Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY'
 })
 
+Template.main.onCreated(function mainOnCreated(){
+  Meteor.subscribe('todos');
+});
 
 // const todos = [
 //   {text:'Pickup the kids from school'},
